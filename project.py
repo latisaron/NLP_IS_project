@@ -74,17 +74,17 @@ svm = SVC(gamma = 'auto', probability = True, C = 10.0)
 parameters = {
             'C': [5, 10, 15]
 }
-# clf = GridSearchCV(svm, parameters, cv=5)
-# clf.fit(X_train, y_train)
-# y_pred_svm = clf.predict(X_test)
+clf = GridSearchCV(svm, parameters, cv=5)
+clf.fit(X_train, y_train)
+y_pred_svm = clf.predict(X_test)
 
-# metrics(y_test, y_pred_svm, "svm")
+metrics(y_test, y_pred_svm, "svm")
 
-# gnb = GaussianNB()
-# gnb.fit(X_train, y_train)
-# y_pred_nb = gnb.predict(X_test)
+gnb = GaussianNB()
+gnb.fit(X_train, y_train)
+y_pred_nb = gnb.predict(X_test)
 
-# metrics(y_test, y_pred_nb, "naive bayes")
+metrics(y_test, y_pred_nb, "naive bayes")
 
 
 from torch.nn import ReLU
