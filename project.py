@@ -70,7 +70,7 @@ df_preprocessed = pd.DataFrame(df.tweet.to_list(), columns = column_names, index
 
 
 X_train, X_test, y_train, y_test = train_test_split(df_preprocessed, class_col, test_size=0.2, random_state=9, stratify=class_col)
-svm = SVC(gamma = 'auto', probability = True, C = 10.0)
+svm = SVC(gamma = 'auto', probability = True)
 parameters = {
             'C': [5, 10, 15]
 }
